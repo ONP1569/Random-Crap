@@ -1,0 +1,144 @@
+elec="false"
+key="false"
+shovel="false"
+firstsquare="false"
+secondsquare="false"
+thirdsquare="false"
+finalsquare="false"
+elecpuzzle="yes"
+leave="yes"
+coordpuzzle1="yes"
+coordpuzzle2="yes"
+digpuzzle="yes"
+digpuzzle2="yes"
+print("*********************")
+print("   UNLOCK THE DOOR   ")
+print("*********************")
+print("You awaken in a room. Before you, a door stands. The door is locked.")
+while leave=="yes" and key=="false":
+ print("There are rooms to your left, to your right and behind you.")
+ print("Which way would you like to go?")
+ direct=str(input())
+ if direct=="key":
+   key="true"
+ if direct=="it's wizard time motherfucker":
+   print("You use magic and open the door.")
+   print("You technically won.")
+   leave="silly"
+ if direct=="left" and elec=="false":
+   elecpuzzle="yes"
+   print("You enter the room to your left.")
+   print("There are 3 small statues, one is green, one is purple and one is orange.")
+   print("It seems there is an order they must be put in.")
+   print("There's a note on the wall. On it, an alphabet, a +2 and a right arrow.")
+   print("You think this gives you the order to put them in.")
+   while elecpuzzle=="yes":
+    print("What order should they be put in?")
+    colour1=input()
+    colour2=input()
+    colour3=input()
+    if colour1=="orange" and colour2=="purple" and colour3=="green":
+      print("It seemed to activate some electrical current. Maybe that will be useful somewhere?")
+      elec="true"
+      elecpuzzle="no"
+    else:
+      print("It doesn't seem to be the right order. Try again?")
+      elecpuzzle=input()
+ if direct=="left" and elec=="true":
+  print("There's nothing left to do here.")
+  print("Would you like to leave the room?")
+  leave=input()
+ if direct=="right" and elec=="false":
+   print("You enter the room to your right.")
+   print("There is a screen in the room, but it doesn't have any power.")
+   print("Maybe you have to activate the power from somewhere else?")
+ if direct=="right" and elec=="true" and firstsquare=="false":
+   coordpuzzle1="yes"
+   print("You enter the room to your right.")
+   print("There is a screen in the room with a digging game.")
+   print("It has a 10 by 10 grid, with letters A to J on the X axis and 1-10 on the Y axis.")
+   print("There is a note on the control panel, with the numbers 68 and 38 inside a hexagon.")
+   print("You think this is a clue for the first coordinates.")
+   while coordpuzzle1==("yes"):
+    print("What coordinates will you input?")
+    coordinates=input()
+    if coordinates!="h8":
+     print("The coordinates were incorrect. Try again?")
+     coordpuzzle1=input()
+    elif coordinates=="h8":
+      coordpuzzle1="no"
+      firstsquare="true"
+      print("That was the correct coordinates.")
+    if direct=="right" and elec=="true" and firstsquare=="true" and secondsquare=="false":
+      coordpuzzle2="yes"
+      print("The game takes you to a second level.")
+      print("The note changes, showing the text ZjEwCg== next to the number 64.")
+      print("This may give you the clue for the next level.")
+      while coordpuzzle2=="yes":
+       print("What coordinates will you input?")
+       coordinates=input()
+       if coordinates!="f10":
+         print("The coordinates were incorrect. Try again?")
+         coordpuzzle2=input()
+       elif coordinates=="f10":
+         coordpuzzle2="no"
+         secondsquare="true"
+         print("The coordinates were correct.")
+         print("The game takes you to a third level but gives you no clue.")
+         print("You turn around and find a shovel on the ground.")
+         shovel="true"
+      print("Would you like to leave the room?")
+      leave=input()
+ if direct=="right" and finalsquare=="true":
+   print("You input the coordinates from the last square in the grassy room.")
+   print("The screen displayes a message of congratulations and a key appers before you.")
+   print("You guess this is the key you need to unlock the door.")
+   key="true"
+ if direct=="back" and shovel=="false":
+    print("You go to the room behind you.")
+    print("The room has a huge, grassy 10 by 10 grid.")
+    print("You seem to need a shovel to dig up squares, but you don't have one.")
+ if direct=="back" and shovel=="true":
+    digpuzzle=="yes"
+    digpuzzle2=="yes"
+    print("You go to the room behind you.")
+    print("The room has a huge, grassy 10 by 10 grid.")
+    print("There is a note on the wall.")
+    print("It reads,repeat was has been done once again in the same way to reval the key to the puzzle.")
+    print("This clue seems to link back to previous clues.")
+    while digpuzzle=="yes" and thirdsquare=="false":
+     print("Which two squares would you like to dig?")
+     digcoord1=input()
+     digcoord2=input()
+     if digcoord1=="h8" and digcoord2=="f10":
+       print("After inputting those two coordinates, a third square lights up:b9.")
+       print("You dig it up and find a note that reads 1f.")
+       print("This seems to be a clue for the final square needed.")
+       thirdsquare="true"
+     else:
+      print("Those coordinates were incorrect. Try again?")
+      digpuzzle=input()
+    while thirdsquare=="true" and digpuzzle2=="yes" and digpuzzle=="yes":
+       print("Which square would you like to dig?")
+       digcoord3=input()
+       if digcoord3=="a6":
+        print("The spot you dug at has a final note.")
+        print("It tells you to go back to the room with the screen and input the coordinates again.")
+        finalsquare="true"
+        digpuzzle="no"
+        digpuzzle2="no"
+       elif digcoord3!="a6":
+         print("The square was wrong. Try again?")
+         digpuzzle2=input()
+       print("Would you like to leave the room?")
+       leave=input()
+if leave=="no":
+  print("If you don't leave, the game will end.")
+  print("Would you like to leave the room?")
+  leave=input()
+  if leave=="no":
+    print("You stay in the room forever and do nothing.")
+    print("GAME OVER")
+print("You go back to the door and attempt to use the key.")
+print("It unlocks the door and you leave.")   
+print("Congratulations, you have beat Unlock The Door!")
