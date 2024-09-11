@@ -1,0 +1,84 @@
+import random
+options=["rock","paper","scissors","lizard","spock"]
+compmove=random.choice(options)
+print("Welcome to Rock, Paper, Scissors,Lizard, Spock!")
+print("Would you like to pick rock, paper, scissors, lizard or spock?")
+playmove=input()
+playmove=playmove.lower()
+if playmove=="rock" and compmove=="scissors":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="rock" and compmove=="paper":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="rock" and compmove=="lizard":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="rock" and compmove=="spock":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="paper" and compmove=="rock":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="paper" and compmove=="scissors":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="paper" and compmove=="lizard":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="paper" and compmove=="spock":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="scissors" and compmove=="paper":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="scissors" and compmove=="rock":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="scissors" and compmove=="lizard":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="scissors" and compmove=="spock":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="lizard" and compmove=="paper":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="lizard" and compmove=="rock":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="lizard" and compmove=="scissors":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="lizard" and compmove=="spock":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="spock" and compmove=="rock":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="spock" and compmove=="paper":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="spock" and compmove=="scissors":
+  print("The computer chose",compmove)
+  print("You win!")
+elif playmove=="spock" and compmove=="lizard":
+  print("The computer chose",compmove)
+  print("You lose!")
+elif playmove=="rock" and compmove=="rock":
+  print("The computer chose",compmove)
+  print("It's a tie!")
+elif playmove=="paper" and compmove=="paper":
+  print("The computer chose",compmove)
+  print("It's a tie!")
+elif playmove=="scissors" and compmove=="scissors":
+  print("The computer chose",compmove)
+  print("It's a tie!")
+elif playmove=="lizard" and compmove=="lizard":
+  print("The computer chose",compmove)
+  print("It's a tie!")
+elif playmove=="spock" and compmove=="spock":
+  print("The computer chose",compmove)
+  print("It's a tie!")
+else:
+  print("That is not a valid move")
