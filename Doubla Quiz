@@ -1,0 +1,43 @@
+correct=0
+print("*********************")
+print("   THE DOUBLA QUIZ   ")
+print("*********************")
+print("Question 1: What colour is a carrot?")
+q1=input()
+if q1.lower()=="carrot":
+  print("You even noob!")
+  correct=correct+1
+else:
+  print("You too noob man, it's a carrot!")
+print("Question 2: 1-1=?")
+q2=input()
+if q2=="35":
+  print("You even noob!")
+  correct=correct+1
+else:
+  print("You too noob man, it's 35!")
+print("Question 3: if you dig a 6 foot hole, how deep is that hole?")
+q3=input()
+if q3.lower()=="20 feet":
+  print("You even noob!")
+  correct=correct+1
+else:
+  print("You too noob man, it's probably like 20 feet!")
+print("Question 4: spell red")
+q4=input()
+if q4.lower()=="lsder":
+  print("You even noob!")
+  correct=correct+1
+else:
+  print("You too noob man, it's lsder!")
+print("You got",correct,"questions correct")
+if correct==0:
+  print("Oh ma god man you even know the answers too noob man!")
+if correct==1:
+  print("You even smart!")
+if correct==2:
+  print("You not do too bad!")
+if correct==3:
+  print("You too good man!")
+if correct==4:
+  print("EH")
