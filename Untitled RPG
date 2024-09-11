@@ -1,0 +1,199 @@
+import random
+import time
+x=0
+lastx=0
+y=0
+lasty=0
+classds="invalid"
+key="no"
+xp=0
+move="none"
+while classds=="invalid":
+ print("Would you like to be a warrior, mage, or medic?")
+ classds=input()
+ if classds.lower()=="warrior":
+   attack=random.randint(10,15)
+   defense=random.randint(5,10)
+   magic=5
+   mp=5
+   maxhealth=random.randint(40,50)
+   classds="warrior"
+   print("Class: Warrior")
+   print("Attack:",attack)
+   print("Defense:",defense)
+   print("Magic:",magic)
+   print("Maximum HP:",maxhealth)
+   print("Weaponry: Fists, Sword, Bow")
+   print("Spells: Fire Arrow")
+ elif classds.lower()=="mage":
+   attack=random.randint(5,10)
+   defense=random.randint(1,5)
+   magic=random.randint(10,15)
+   mp=magic
+   maxhealth=random.randint(40,50)
+   classds="mage"
+   print("Class: Mage")
+   print("Attack:",attack)
+   print("Defense",defense)
+   print("Magic:",magic)
+   print("Maximum HP:",maxhealth)
+   print("Weaponry: Fists, Staff")
+   print("Spells: Fireball, Shield, MP Drain, Arcane Blast")
+ elif classds.lower()=="medic":
+   attack=random.randint(1,5)
+   defense=random.randint(5,10)
+   magic=random.randint(15,20)
+   mp=magic
+   maxhealth=random.randint(40,50)
+   classds="medic"
+   print("Class: Medic")
+   print("Attack:",attack)
+   print("Defense:",defense)
+   print("Magic:",magic)
+   print("Maximum HP:",maxhealth)
+   print("Weaponry: Fists")
+   print("Spells: Heal, MP Drain, Shield, Shock")
+ else:
+   print("Class invalid!")
+   classds="invalid"
+ time.sleep(10)
+ print("\033[H\033[J", end="")
+ print("You awaken in a dark forest.")
+ time.sleep(1)
+ while y>-5 and y<5 and x>-5 and x<5 and key=="no":
+  print("Obvious directions are North, East, South, and West.")
+  time.sleep(1)
+  print("Which way will you go?")
+  direct=input()
+  if direct.lower()=="north":
+    y=y+1
+    if lasty!=0:
+       lasty=lasty+1
+  elif direct.lower()=="east":
+    x=x+1
+    if lastx!=0:
+       lastx=lastx+1
+  elif direct.lower()=="south":
+    y=y-1
+    if lasty!=0:
+       lasty=lasty-1
+  elif direct.lower()=="west":
+    x=x-1
+    if lastx!=0:
+        lastx=lastx-1
+  else:
+     print("Please input a valid direction")
+  print("\033[H\033[J", end="")
+  while x==-5 and y>-5 and y<5:
+     print("Obvious directions are North, South, and East.")
+     time.sleep(1)
+     print("Which way will you go?")
+     direct=input()
+     if direct.lower()=="north":
+         y=y+1
+     elif direct.lower()=="south":
+         y=y-1
+     elif direct.lower()=="east":
+         x=x+1
+     else:
+          print("Please input a valid direction")
+          time.sleep(1)
+     print("\033[H\033[J", end="")
+  while y==-5 and x==-5:
+     print("Obvious dircetions are North and East")
+     time.sleep(1)
+     print("Which way will you go?")
+     direct=input()
+     if direct.lower()=="north":
+      y=y+1
+      if lasty!=0:
+         lasty=lasty+1
+     elif direct.lower()=="east":
+      x=x+1
+      if lastx!=0: 
+         lastx=lastx+1
+     else:
+         print("Please input a valid direction")
+         time.sleep(1)
+     print("\033[H\033[J", end="")
+  if lastx==x+1 or lastx==x-1 or lasty==y+1 or lasty==y-1:
+   enemy=random.randint(1,10)
+   if enemy>=5:
+    enemy=random.randint(1,10)
+    if enemy<=3:
+       print("A goblin approaches to fight!")
+       enemyhp=random.randint(35,45)
+       enemyattack=random.randint(5,10)
+       enemydefense=random.randint(5,10)
+    elif enemy<=7 and enemy>3:
+       print("A skeleton clatters towards you!")
+       enemyhp=random.randint(30,40)
+       enemyattack=random.randint(2,7)
+       enemydefense=random.randint(1,5)
+    elif enemy<=9 and enemy>7:
+       print("A vampire appears out of the shadows!")
+       enemyhp=random.randint(45,55)
+       enemyattack=random.randint(10,15)
+       enemydefense=random.randint(2,5)
+    elif enemy==10:
+       print("An orc draws close for battle!")
+       enemyhp=random.randint(50,60)
+       enemyattack=random.randint(10,15)
+       enemydefense=random.randint(10,15)
+    time.sleep(1)
+    while move=="none":
+        print("Its HP is",enemyhp)
+        time.sleep(1)
+        print("What will you do?")
+        time.sleep(1)
+        print("Attack")
+        print("Magic")
+        print("Defend")
+        print("Flee")
+        move=input()
+        if move.lower()=="attack":
+         print("Attack with what?")
+         time.sleep(1)
+         print("Fists")
+         if classds.lower()=="warrior":
+            print("Sword")
+            print("Bow")
+         if classds.lower()=="mage":
+            print("Staff")
+        move=input()
+        if move.lower()=="fists":
+         damage=float(random.randrange(1,3))*attack/enemydefense
+         damage=round(damage)
+         enemyhp=enemyhp-damage
+        if move.lower()=="sword" and classds.lower()=="warrior":
+         damage=float(random.randrange(3,4))*attack/enemydefense
+         damage=round(damage)
+         enemyhp=enemyhp-damage
+        if move.lower()=="bow" and classds.lower()=="warrior":
+           damage=2.5*attack/enemydefense
+           damage=round(damage)
+           enemyhp=emenyhp-damage
+        if move.lower()=="staff" and classds.lower()=="mage":
+           damage=float(random.randrange(2,3))*attack/enemydefense
+           damage=round(damage)
+           enemyhp=enemyhp-damage
+        if move.lower()=="magic" and classds.lower()=="warrior":
+           print("Use what spell?")
+           time.sleep(1)
+           print("Fire Arrow (5MP)")
+           print("You have",mp,"MP")
+           move=input()
+           if move.lower()=="fire arrow" and mp>=5:
+              damage=random.randint(20,25)
+              enemyhp=enemyhp-damage
+              mp=mp-5
+           if move.lower()=="fire arrow" and mp<5:
+              print("You don't have enough MP!")
+        elif move.lower()=="magic" and classds.lower()=="mage":
+           print("Use what spell?")
+           time.sleep(1)
+           print("Fireball (5MP)")
+           print("Shield (4MP)")
+           print("MP Steal (3MP)")
+           print("Arcane Blast (10MP)")
+           print("You have",mp,"MP")
